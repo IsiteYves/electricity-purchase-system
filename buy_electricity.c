@@ -131,7 +131,7 @@ inputcashpower:
 	}
 }
 
-float getUnits(char category[], float amount, int unitsSoFar)
+float getUnits(char category[], float amount,float unitsSoFar)
 {
 	float units;
 
