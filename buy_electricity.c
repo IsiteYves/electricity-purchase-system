@@ -9,7 +9,7 @@ typedef struct tokenstruct
 	char status[8];
 } tokenstruct;
 
-float getUnits(char category[], float amount, int unitsSoFar);
+float getUnits(char category[], float amount, float unitsSoFar);
 
 void main()
 {
@@ -131,7 +131,7 @@ inputcashpower:
 	}
 }
 
-float getUnits(char category[], float amount, int unitsSoFar)
+float getUnits(char category[], float amount, float unitsSoFar)
 {
 	float units;
 
@@ -140,17 +140,27 @@ float getUnits(char category[], float amount, int unitsSoFar)
 		if (amount >= 89)
 		{
 			float round1 = amount / 89;
-			if (round1 <= 15)
+			if (round1 <= (15 - unitsSoFar))
 			{
 				units = round1;
 				return units;
 			}
 			else
 			{
-				round1 = 15;
-				float remaining_amount_round1 = amount - 1335;
+				if (unitsSoFar <= 15)
+					round1 = (15 - unitsSoFar);
+				else
+					round1 = 0;
+				float remaining_amount_round1 = amount - (round1 * 89);
 				float round2 = remaining_amount_round1 / 212;
-				if (round2 <= 35)
+				int ref_units = 0;
+				if (unitsSoFar > 15 && unitsSoFar <= 50)
+					ref_units = 50 - unitsSoFar;
+				else if (unitsSoFar <= 15)
+					ref_units = 35;
+				else
+					ref_units = 0;
+				if (round2 <= ref_units)
 				{
 					float total_interval2 = round1 + round2;
 					units = total_interval2;
@@ -158,8 +168,14 @@ float getUnits(char category[], float amount, int unitsSoFar)
 				}
 				else
 				{
-					round2 = 35;
-					float remaining_amount_round2 = amount - (1335 + 7420);
+					if (unitsSoFar > 15 && unitsSoFar <= 35)
+						round2 = (35 - unitsSoFar);
+					else if (unitsSoFar <= 15)
+						round2 = 35;
+					else
+						round2 = 0;
+					int u1 = round1 * 89, u2 = round2 * 212;
+					float remaining_amount_round2 = amount - u1 - u2;
 					float round3 = remaining_amount_round2 / 249;
 					float total_interval3 = round1 + round2 + round3;
 					units = total_interval3;
@@ -169,7 +185,7 @@ float getUnits(char category[], float amount, int unitsSoFar)
 		}
 		else
 		{
-			printf("\n\tThe Entered Amount is less than the minmum allowed or you entered invalid characters2.");
+			printf("\n\tThe minimum amount of money for your category is 89 Frw.");
 			exit(-1);
 		}
 		return 0;

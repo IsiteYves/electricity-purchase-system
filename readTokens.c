@@ -20,6 +20,7 @@ void main()
         if (!strcmp(t1.status, "used"))
             used++;
     }
-    printf("\n\t%d tokens found.\n\tUsed: %d Tokens", i, used);
+    printf("\n\t===========================\n\t%d tokens found.", i);
+    printf("\n\tUsed: %d Tokens", used);
     fclose(fp4);
 }
