@@ -18,6 +18,18 @@ void viewCustomers()
     n = i;
     fclose(fp1);
     printf("\n\t%d Total customers found.\n\t=================================", i);
+    char *tit2 = "Names";
+    char *tit3 = "Category";
+    char *tit4 = "Cashpower number";
+    char *tit5 = "Previous pay month";
+    char *tit6 = "Units paid in the month";
+    char *ln2 = "_________________";
+    char *ln3 = "_________________";
+    char *ln4 = "_________________";
+    char *ln5 = "___________________";
+    char *ln6 = "________________________";
+    printf("\n\n\tNo %-20s\t%-20s\t%-20s\t%-20s\t%s", tit2, tit3, tit4, tit5, tit6);
+    printf("\n\t__ %-20s\t%-20s\t%-20s\t%-20s\t%s\n", ln2, ln3, ln4, ln5, ln6);
     for (i = 0; i < n; i++)
         printf("\n\t%d) %-20s\t%-20s\t%-20s\t%-20s\t%.2f", i + 1, customersArr[i].customerNames, customersArr[i].category, customersArr[i].cashpowernumber, customersArr[i].lastPurchaseMonth, customersArr[i].monthPurchasedUnits);
 }
@@ -59,7 +71,7 @@ void main()
     printf("\n\n\t|| Options\n\t=================================\n\t|| 0) Exit");
     printf("\n\t|| 1) View customers\n\t|| 2) Add a new customer");
 choice:
-    printf("\n\n\tWhat you want to do (1 or 2): ");
+    printf("\n\n\tWhat you want to do (0, 1 or 2): ");
     scanf("%d", &option);
     switch (option)
     {
