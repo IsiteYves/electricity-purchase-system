@@ -213,7 +213,7 @@ float getUnits(char category[], float amount, float unitsSoFar)
 		}
 		else
 		{
-			printf("\n\tThe Entered Amount is less than the minmum allowed or you entered invalid characters1.");
+			printf("\n\tThe minimum amount of money for your category is 227 Frw.");
 			exit(-1);
 		}
 	}
@@ -228,7 +228,7 @@ float getUnits(char category[], float amount, float unitsSoFar)
 		}
 		else
 		{
-			printf("\n\tThe amount is less than the min amount allowed or you entered invalid characters");
+			printf("\n\tThe minimum amount for your category is 126 Frw.");
 			exit(-1);
 		}
 	}
@@ -243,7 +243,7 @@ float getUnits(char category[], float amount, float unitsSoFar)
 		}
 		else
 		{
-			printf("\n\tThe amount is less than the min amount allowed or you entered invalid characters");
+			printf("\n\tThe minimum amount of money for your category is 201 Frw.");
 			exit(-1);
 		}
 	}
@@ -258,7 +258,7 @@ float getUnits(char category[], float amount, float unitsSoFar)
 		}
 		else
 		{
-			printf("\n\tThe amount is less than the min amount allowed or you entered invalid characters");
+			printf("\n\tThe minimum amount of money for your category is 157 Frw.");
 			exit(-1);
 		}
 	}
@@ -272,7 +272,7 @@ float getUnits(char category[], float amount, float unitsSoFar)
 		}
 		else
 		{
-			printf("\n\tThe amount is less than the min amount allowed or you entered invalid characters");
+			printf("\n\tThe minimum amount of money for your category is 186 Frw.");
 			exit(-1);
 		}
 	}
@@ -286,7 +286,7 @@ float getUnits(char category[], float amount, float unitsSoFar)
 		}
 		else
 		{
-			printf("\n\tThe amount is less than the min amount allowed or you entered invalid characters");
+			printf("\n\tThe minimum amount of money for your category is 192 Frw.");
 			exit(-1);
 		}
 	}
@@ -300,7 +300,7 @@ float getUnits(char category[], float amount, float unitsSoFar)
 		}
 		else
 		{
-			printf("\n\tThe amount is less than the min amount allowed or you entered invalid characters");
+			printf("\n\tThe minimum amount of money for your category is 179 Frw.");
 			exit(-1);
 		}
 	}
